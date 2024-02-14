@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header'
+import Footer from './components/Footer'
+import { ContentA } from './components/ContentA';
+import { ContentB } from './components/ContentB';
+import { SharedButton } from './components/SharedComponents';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className='Content'>
+        <ContentA/>
+        <SharedButton onClick={() => alert('Content A')}>Click Me</SharedButton>  
+        <br/><br/>
+      </div>
+      <br/><br/>
+      <div className='Content'>
+        <ContentB/>
+        <SharedButton onClick={() => alert('Content B')}>Click Me</SharedButton>  
+        <br/><br/>
+      </div>
+      <Footer />
     </div>
   );
 }
